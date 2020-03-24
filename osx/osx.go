@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/greenboxal/dns-heaven"
+	dnsheaven "github.com/disaac/dns-heaven"
 	"github.com/miekg/dns"
 	"github.com/sirupsen/logrus"
 )

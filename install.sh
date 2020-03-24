@@ -3,9 +3,9 @@
 set -e
 
 TARGET=/usr/local/bin/dns-heaven
-PLIST=/Library/LaunchDaemons/com.greenboxal.dnsheaven.plist
+PLIST=/Library/LaunchDaemons/com.sdunixgeek.dnsheaven.plist
 
-curl -L -o $TARGET https://github.com/greenboxal/dns-heaven/releases/download/v1.0.0/dns-heaven_1.0.0_darwin_amd64
+curl -L -o $TARGET https://github.com/disaac/dns-heaven/releases/download/v1.0.1/dns-heaven_1.0.1_darwin_amd64
 chmod +x $TARGET
 
 cat > $PLIST <<EOF
@@ -14,7 +14,7 @@ cat > $PLIST <<EOF
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.greenboxal.dnsheaven</string>
+    <string>com.sdunixgeek.dnsheaven</string>
     <key>ProgramArguments</key>
     <array>
         <string>$TARGET</string>
