@@ -22,7 +22,7 @@ func (e ResolvError) Error() string {
 	return errmsg
 }
 
-// Resolver type
+// StandardResolver type
 type StandardResolver struct {
 	Nameservers []string
 	Timeout     time.Duration

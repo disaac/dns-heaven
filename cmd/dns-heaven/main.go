@@ -5,8 +5,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/greenboxal/dns-heaven"
-	"github.com/greenboxal/dns-heaven/osx"
+	dnsheaven "github.com/disaac/dns-heaven"
+	"github.com/disaac/dns-heaven/osx"
 	"github.com/sirupsen/logrus"
 )
 

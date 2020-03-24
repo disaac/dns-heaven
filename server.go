@@ -7,12 +7,14 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+// Server struct
 type Server struct {
 	config *Config
 	tcp    *dns.Server
 	udp    *dns.Server
 }
 
+// NewServer creates a new dns server for resolution requests
 func NewServer(config *Config, resolver Resolver) *Server {
 	resolve := func(net string) dns.HandlerFunc {
 		return func(r dns.ResponseWriter, msg *dns.Msg) {
@@ -63,6 +65,7 @@ func NewServer(config *Config, resolver Resolver) *Server {
 	}
 }
 
+// Start runs the server on both ports for udp/tcp
 func (s *Server) Start() error {
 	wg := &sync.WaitGroup{}
 
@@ -86,6 +89,7 @@ func (s *Server) Start() error {
 	return nil
 }
 
+// Shutdown stops the server
 func (s *Server) Shutdown() error {
 	err1 := s.tcp.Shutdown()
 	err2 := s.udp.Shutdown()
